@@ -1,0 +1,645 @@
+/* ========
+  GENERAL 
+=========*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #F2F4F4;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+h3 a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  margin: 0px;
+  padding: 5px 15px;
+  min-height: 40px;
+  background-color: #1E4A8B; 
+}
+
+header h3 {
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+body, button, input {
+  font-family: Lato, sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.landing-head {
+  color: white;
+  text-align: center;
+}
+
+.landing-head p {
+  color: #DBDCDD;
+}
+
+footer p {
+  font-size: .8em;
+  color: #828282;
+}
+
+div.agreement {
+  width: 70%;
+  margin: auto;
+}
+
+div.content {
+  padding-bottom: 36px;
+}
+
+main {
+  padding: 0 20px;
+}
+
+/* ========
+  CHARTS 
+=========*/
+.credit {
+  font-size: 10px;
+  text-align: center;
+}
+
+.chart {
+  display: block;
+  min-width: 600px;
+  margin: 10px;
+  padding-left: 30px;
+  border: 1px solid #BDBFC0;
+  border-radius: 4px;
+  background-color: #FDFDFD;
+}
+
+.chart span {
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.chart p {
+  font-weight: 200;
+  color: #969696;
+}
+
+/* ================
+  SIGN-IN/SIGN-UP 
+=================*/
+div.signin-signup {
+  width: 300px;
+  margin: auto;
+}
+
+.signin-signup input {
+  width: 293px;
+  padding: 10px 12px;
+  margin-top: 10px;
+  font-size: 1.1em;
+  border-radius: 3px;
+  border: 1px solid #A9A9A9;
+}
+
+input.certify {
+  width: 1em;
+  height: 1em;
+  margin-bottom: 20px;
+}
+
+.signin-signup button {
+  width: 292px;
+  height: 45px;
+  font-size: 0.9em;
+  color: white;
+  background-color: #336699;
+  border: 0px;
+  border-radius: 4px;
+}
+
+.signin-signup button:hover {
+  background-color: #12487F;
+}
+
+/* ================
+  ALERT MESSAGES 
+=================*/
+.success, .failure {
+  margin: auto;
+  margin-top: 2px;
+  width: 93%;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.success {
+  background-color: #C4FFC0;
+  color: #348044;
+}
+
+.failure {
+  background-color: #F8D0CD;
+  color: #653445;
+}
+
+/* ==============
+    DASHBOARD
+=============== */
+
+.dashboard-container {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 0;
+  margin-right: 10px;
+  width: 49%;
+  min-height: 650px;
+  max-height: 800px;
+  border: 1px solid #BDBFC0;
+  border-radius: 4px;
+  background-color: #FDFDFD;
+}
+
+.dashboard-container:last-child {
+  margin-right: 0;
+}
+
+.dashboard-container h3 {
+  font-size: 1.5em;
+  width: auto;
+  padding: 25px 30px;
+  margin: 0;
+  border-bottom: 1px solid #BDBFC0;
+}
+
+.dashboard-container table.transactions {
+  height: 480px;
+}
+
+table.portfolio, 
+table.transactions {
+  border-collapse: collapse;
+  display: block;
+  margin: 30px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.portfolio tbody,
+.transactions tbody {
+  width: 450px;
+}
+
+.portfolio td {
+  padding: 1em;
+  text-align: right;
+}
+
+.transactions td {
+  padding: 1em 0;
+  padding-left: 1em;
+  text-align: right;
+}
+
+.portfolio tr, .transactions tr {
+  border-bottom: 1px dashed #CFCFCF;
+}
+
+td.name {
+  font-weight: 900;
+  padding-left: 0px;
+  text-align: left;
+}
+
+.head th {
+  padding: 0 1em 0.3em 1em;
+  font-weight: 300;
+  font-size: 0.7em;
+  text-align: right;
+  color: #5B5D60;
+}
+
+td.counter-value {
+  font-weight: 300;
+  color: #717171;
+}
+
+.transactions td span {
+  font-size: 16px;
+  color: #9D9D9D;
+}
+
+.transactions td span {
+  font-weight: 400;
+}
+
+.transactions td b {
+  font-weight: 400;
+}
+
+.transactions td p {
+  font-weight: 200;
+  margin: 0;
+}
+
+td.buy,
+td.deposit {
+  color: green;
+}
+
+td.sell {
+  color: red;
+}
+
+td.buy p:before,
+td.deposit p:before,
+td.deposit span:before,
+td.sell span:before {
+  content: '+';
+}
+
+td.sell p:before,
+td.buy span:before {
+  content: '-';
+}
+
+/* =========
+    MENU
+============ */
+
+.menu {
+  line-height: 58px;
+  padding-right: 20px;
+  display: inline-block;
+  float: right;
+}
+
+.menu button {
+  text-decoration: underline;
+  text-decoration-color: #7987A5;
+  font-weight: 500;
+  color: white;
+  background-color: Transparent;
+  border: none;
+}
+
+header p {
+  line-height: 59px;
+  margin: 0;
+  padding-right: 20px;
+  font-size: 14px;
+  font-style: italic;
+  color: #C4C4C4;
+  display: inline-block; 
+  float: right;
+}
+
+div.offline {
+  height: 18px;
+  margin: 0;
+}
+
+.offline p {
+  text-align: center;
+  background-color: #FEFF91;
+  margin: 0;
+}
+
+/* ==============
+    NAVIGATION
+=============== */
+
+nav.index-links {
+  margin: auto;
+  width: 75%;
+}
+
+.index-links button {
+  display: inline-block;
+  width: 45%;
+  padding: 1em;
+  margin: 10px;
+  border: 2px solid #385BB2;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+button.signup {
+  color: white;
+  background-color: #385BB2;
+}
+
+button.signup:hover, button.view-charts:hover {
+  color: white;
+  border: 2px solid #FF9900;
+  background-color: #FF9900;
+}
+
+button.view-charts {
+  background-color: transparent;
+  color: #4272E6;
+}
+
+nav.account-menu {
+  margin: 0;
+  text-align: center;
+}
+
+.account-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.account-menu ul li {
+  display: inline-block;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.account-menu li.active {
+  border-bottom: 3px solid #4172C4;
+}
+
+.account-menu a {
+  color: #9B9EA3;
+  text-decoration: none;
+}
+
+.account-menu li.active a {
+  color: #4172C4;
+}
+
+.account-menu a:hover {
+  color: #83AAEB;
+}
+
+
+/* ================
+      BUY/SELL
+================= */
+
+.buy h4, .sell h4 {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.buy hr, .sell hr {
+  height: 1px;
+  border: 0;
+  border-top: 1.5px solid #D2D2D2;
+}
+
+.buy-coin,
+.sell-coin {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-coin button,
+.sell-coin button {
+  width: 200px;
+  padding: 10px;
+  background-color: transparent;
+  border: 1.5px solid #B8BAC1;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.buy-coin button:hover,
+.sell-coin button:hover {
+  background-color: #F3F5F9;
+  border-color: #B4C5FF;
+}
+
+.buy-coin button.active,
+.sell-coin button.active
+{
+  background-color: #FAFAFA;
+  border-width: 2px;
+  cursor: default;
+}
+
+.buy-coin button.active {
+  border-color: #5E84FF;
+}
+
+.sell-coin button.active {
+  background-color: #FEFBF5;
+  border-color: #FF9761;
+}
+
+p#counter-value {
+  margin: 0px;
+  color: #ABABAB;
+}
+
+.currency-inputs div {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  margin: 5px;
+  padding: 0px 15px 4px 15px;
+  background-color: #F9F9F9;
+  border: 1.5px solid #B8BAC1;
+  border-radius: 3px;
+}
+
+.currency-inputs input {
+  width: 75%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.currency-inputs input:focus {
+  outline: none;
+}
+
+.currency-inputs label {
+  color: #B8BAC1;
+  font-size: 20px;
+}
+
+.buy p, .sell p {
+  margin-left: 10px;
+}
+
+.buy a, .sell a {
+  text-decoration: none;
+}
+
+#arrow {
+  margin: 0px;
+  display: inline;
+  color: #B8BAC1;
+  font-size: 24px;
+}
+
+div.red-border {
+  border-color: #FF6E78;
+}
+
+.hide {
+  display: none;
+}
+
+.alert-limit {
+  display: none;
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+  color: #FF6E78;
+}
+
+div.alert {
+  padding: 0px;
+  display: block;
+  border: none;
+  background: transparent;
+  height: 20px;
+}
+
+button.submit-buy,
+button.submit-sell
+{
+  font-size: 18px;
+  color: white;
+  margin: 5px;
+  width: 460px;
+  height: 50px;
+  background-color: #3C84D3;
+  border: 1px solid #316FB4;
+  border-radius: 2px;
+}
+
+button.submit-sell {
+  border-color: #A53D04;
+  background-color: #E26F1E;
+}
+
+button.submit-buy:hover {
+  background-color: #316FB4;
+}
+
+button.submit-sell:hover {
+  background-color: #CC5400;
+}
+
+.currency-inputs input {
+  width: 100px;
+}
+
+main.buy,
+main.sell {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 450px;
+  background-color: #FEFEFE;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+.buy [type=submit],
+.sell [type=submit] {
+  width: 400px;
+}
+
+/*===============
+    SETTINGS
+===============*/
+
+.container h3 {
+  margin-top: 0;
+}
+
+.container {
+  vertical-align: top;
+  display: inline-block;
+  min-width: 450px;
+  height: 200px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #BDBFC0;
+  border-radius: 4px;
+  background-color: #F7F7F7;
+}
+
+.container input {
+  display: block;
+  padding: 0.8em;
+  margin: 0.5em 0;
+  width: 100%;
+  height: 1em;
+  font-size: 17px;
+  border-radius: 2px;
+  border: 1px solid #CBCBCB;
+}
+
+.container form {
+  width: 20em;
+}
+
+.container button {
+  width: 109%;
+  height: 2.3em;
+  font-size: 18px;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid #72777F;
+  background-color: #77808D;
+}
+
+.container button:hover {
+  background-color: #898A96;
+}
+
+.danger button {
+  width: 350px;
+  border-color: #CE2F2F;
+  background-color: #FF4C4C;
+}
+
+.danger button:hover {
+  background-color: #C84444;
+}
+
+.danger p {
+  width: 30em;
+}
+
+span.alert {
+  display: block;
+  color: #EA2B41;
+}
+
+/*==================
+    Media Queries
+==================*/
+@media (max-width: 768px) {
+  .dashboard-container {
+    display: block;
+    width: 100%;
+  }
+}

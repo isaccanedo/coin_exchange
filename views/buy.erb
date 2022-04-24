@@ -1,0 +1,64 @@
+<nav class='account-menu'>
+  <ul>
+    <li><a href='/dashboard'>Dashboard</a></li>
+    <li><a href='/charts'>Charts</a></li>
+    <li class='active'><a>Buy</a></li>
+    <li><a href='/sell'>Sell</a></li>
+    <li><a href='/settings'>Settings</a></li>
+  </ul>
+</nav>
+
+<main class='buy'>
+  <h4>Currency</h4>
+  <hr />
+  <div class='buy-coin'>
+    <a <%== buy_link(@coin, 'btc') %>>
+      <button <%== class_active_status(@coin, 'btc')%>>
+        Bitcoin
+        <p id='counter-value'>@<%= format_usd(@current_btc_price) %></p>
+      </button>
+    </a>
+    <a <%== buy_link(@coin, 'eth') %>>
+      <button <%== class_active_status(@coin, 'eth')%>>
+        Ether
+        <p id='counter-value'>@<%= format_usd(@current_eth_price) %></p>
+      </button>
+    </a>
+  </div>
+
+  <h4>Amount</h4>
+  <hr />
+  <p>Your USD Balance: <b><%= format_usd(@usd_balance) %></b></p>
+
+  <div class='currency-inputs'>
+    <form action='/user/buy/<%=@coin%>' method='post' onsubmit='buyButton.disabled = true'>
+      <div id='primary-input'>
+        <input class='primary' id='usd-input' type='number' min='1' 
+        max='999999' step='0.01' name='usd_amount' placeholder='0.00'>
+        <label for='usd-input'>USD</label>
+      </div>
+
+      <p id='arrow'>⇌</p>
+
+      <div>
+        <input class='secondary' id='coin-input' type='number' min='0' max='9999' step='0.000001' name='coin_amount' placeholder='0'>
+        <label for='coin-input'><%= @coin.upcase %></label>
+      </div>
+
+      <div class='alert'>
+        <p class='alert-limit'>Insufficient funds.</p>
+      </div>
+
+      <button class='submit-buy' type='submit' name='buyButton'>
+        Buy <%= CURRENCY_NAMES[@coin.to_sym] %>
+      </button>
+    </form>
+  </div>
+</main>
+
+<script type='text/javascript'>
+  var currentCoinPrice = '<%=instance_variable_get("@current_#{@coin}_price")%>';
+  var balance = <%= @usd_balance %>;
+
+  $.getScript('/javascript/input-conversion.js');
+</script>

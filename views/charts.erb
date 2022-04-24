@@ -1,0 +1,47 @@
+<% if session[:signin] %>
+  <nav class='account-menu'>
+    <ul>
+      <li><a href='/dashboard'>Dashboard</a></li>
+      <li class='active'><a>Charts</a></li>
+      <li><a href='/buy'>Buy</a></li>
+      <li><a href='/sell'>Sell</a></li>
+      <li><a href='/settings'>Settings</a></li>
+    </ul>
+  </nav>
+<% end %>
+
+<div class='chart'>
+
+  <h4>Bitcoin Price 30-day chart</h4>
+  <%== area_chart(
+    @historical_bpi, 
+    min: @min_btc_price*0.95, 
+    max: @max_btc_price*1.1, 
+    colors: ['#ffcc00'], 
+    label: 'BTC Price',
+    library: {chartArea: {height: '80%', width: '85%'}, backgroundColor: 'transparent' } 
+  ) %>
+  <nav class='credit'>Data source: <a href='https://www.cryptocompare.com/api/'>CryptoCompare</a></nav>
+
+  <br />
+  <span>Bitcoin Price: $<%= @current_btc_price %></span>
+  <p>Updated: <%= Time.now %></p>
+</div>
+
+<div class='chart'>
+  <h4>Ethereum Price 30-day chart</h4>
+
+    <%== area_chart(
+      @historical_eth, 
+      min: @min_eth_price*0.95,
+      max: @max_eth_price*1.1,
+      colors: ['#85ABF3'], 
+      label: 'ETH Price',
+      library: {chartArea: {height: '80%', width: '85%'}, backgroundColor: 'transparent' } 
+    ) %>
+  <nav class='credit'>Data source: <a href='https://www.cryptocompare.com/api/'>CryptoCompare</a></nav>
+
+  <br />
+  <span>Ethereum Price: $<%= @current_eth_price %></span>
+  <p>Updated: <%= Time.now %></p>
+</div>

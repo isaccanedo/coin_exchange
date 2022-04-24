@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Coin Exchange | Buy and Sell Digital Coin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href='/stylesheets/main.css' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Lato:200,400,900' rel='stylesheet' />
+    <script src='/javascript/chartkick.js'></script>
+    <script src='/javascript/jsapi.js'></script>
+    <script src='/javascript/jquery-3.2.1.js'></script>
+  </head>
+  <body>
+    <header>
+      <h3><a href='/'>Coin Exchange</a></h3>
+      <% if user_signed_in? %>
+        <form class='menu signout' action='/user/signout' method='post'>
+          <button type='submit'>Sign Out</button>
+        </form>
+
+        <p>Signed in as <%=session[:signin][:username]%></p>
+      <% else %>
+        <a class='menu' href='/signin'>
+          <button type='submit'>Sign In</button>
+        </a>
+      <% end %>
+    </header>
+
+    <div class='content'>
+      <div>
+        <div class='offline'>
+          <% if session[:offline] %>
+            <p>REAL-TIME DATA OFFLINE</p>
+          <% end %>
+        </div>
+
+        <% if session[:success] %>
+          <p class='success'><%== session.delete(:success) %></p>
+        <% end %>
+
+        <% if session[:failure] %>
+          <p class='failure'><%== session.delete(:failure) %></p>
+        <% end %>
+
+        <%== yield %>
+
+      </div>
+    </div>
+    
+    <hr />
+    <footer>
+      <p>© Ying Chyi Gooi</p>
+    </footer>
+  </body>
+</html>
